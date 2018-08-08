@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="./jquerySearch.css">
+    <style type="text/css">
+    	.demo{
+    		margin: 100px auto;
+    		width: 240px;
+    		height: 40px;
+    		border: solid 1px #ccc;
+    		border-radius: 4px;
+    	}
+    </style>
+</head>
+<body>
+	<form>
+		<div id="demo" class="demo"></div>
+		<div id="demo2" class="demo"></div>
+		<input type="submit" name="" value="提交">
+	</form>
+	<script type="text/javascript" src="./jquery.js"></script>
+	<script type="text/javascript" src="./jquerySearch.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var demo = new jquerySearch({
+				name: '#demo',
+				placeholder: '搜索订单号',
+				updata: function( _this, val){
+					var newData = [];
+					for(var i = 0; i < 6; i++){
+						newData[i] = val + '选项' + i;
+					}
+					_this.createList(newData);
+				}
+			})
+			var demo2 = new jquerySearch({
+				name: '#demo2',
+				placeholder: '搜索订单号',
+				updata: function( _this, val){
+					var newData = [];
+					for(var i = 0; i < 6; i++){
+						newData[i] = val + '选项' + i;
+					}
+					_this.createList(newData);
+				}
+			})
+		})
+	</script>
+</body>
+</html>
